@@ -1,93 +1,81 @@
 #include "main.h"
-
 /**
- * add_queue - add a node at the end of the doubly link list
- * @head: first position of the linked list
- * @n: data to store
- * Return: a doubly linked list
+ * add_queue - Adds a new node at the end of a queue
+ * @head: Pointer to a pointer to the head node of the queue
+ * @n: Value to be added to the new node
+ *
+ * Return: Address of the newly added node, or NULL on failure
  */
 
 stack_t *add_queue(stack_t **head, const int n)
 {
-	stack_t *temp, *ptr;
+	stack_t *new_node = malloc(sizeof(stack_t));
 
-	if (head == NULL)
+	if (!new_node)
 		return (NULL);
-	temp = malloc(sizeof(stack_t));
-	if (!temp)
-	{
-		dprintf(2, "Error: malloc failed\n");
-		free_glob();
-		exit(EXIT_FAILURE);
-	}
-	temp->n = n;
+
+	new_node->n = n;
+	new_node->prev = NULL;
+	new_node->next = NULL;
 
 	if (*head == NULL)
 	{
-		temp->next = *head;
-		temp->prev = NULL;
-		*head = temp;
-		return (*head);
+		*head = new_node;
+		return (new_node);
 	}
-	ptr = *head;
-	while (ptr->next)
-		ptr = ptr->next;
-	temp->next = ptr->next;
-	temp->prev = ptr;
-	ptr->next = temp;
-	return (ptr->next);
+
+	stack_t *current = *head;
+
+	while (current->next != NULL)
+	{
+		current = current->next;
+	}
+
+	current->next = new_node;
+	new_node->prev = current;
+	return (new_Node);
 }
 
 /**
- * add_node - add a node at the beginining of the doubly link list
- * @head: first position of linked list
- * @n: data to store
- * Return: a doubly linked list
+ * add_node - Adds a new node at the beginning of a linked list
+ * @head: Pointer to a pointer to the head node of the linked list
+ * @n: Value to e added to the new node.
+ *
+ * Return: Address of the newly added node, or NULL on failure
  */
-
 stack_t *add_node(stack_t **head, const int n)
 {
-	stack_t *temp;
+	stack_t *new_node = malloc(sizeof(stack_t));
 
-	if (head == NULL)
+	if (!new_node)
 		return (NULL);
-	temp = malloc(sizeof(stack_t));
-	if (!temp)
-	{
-		dprintf(2, "Error: malloc failed\n");
-		free_glob();
-		exit(EXIT_FAILURE);
-	}
-	temp->n = n;
+	new_node->n = n;
+	new_node->prev = NULL;
+	new_node->next = *head;
 
-	if (*head == NULL)
+	if (*head != NULL)
 	{
-		temp->next = *head;
-		tenp->prev = NULL;
-		*head = temp;
-		return (*head);
+		(*head)->prev = new_node;
 	}
-	(*head)->prev = temp;
-	temp->next = (*head);
-	temp->prev = NULL;
-	*head = temp;
-	return (*head);
+	*head = new_node;
+	return (new_node);
 }
 
 /**
- * free_list - frees the doubly linked list
+ * free_list - Frees all nodes in a linked list
+ * @head: pointer to the head node of the linked list
  *
- * @head: head of the list
- * Return: no return
+ * Description: Frees each node in the linked list and sets the head
+ * to NULL
  */
-
 void free_list(stack_t *head)
 {
-	stack_t *tmp;
-
-	while ((tmp = head) != NULL)
+	while (head != NULL)
 	{
-		head = head->next;
-		free(tmp);
+		stack_t *next_node = head->next;
+
+		free(head);
+		head = next_node;
 	}
 }
+
