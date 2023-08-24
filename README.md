@@ -8,7 +8,7 @@ The Monty language contains specific instructions to manipulate data information
 
 Example `file.m`:
 
-```shell
+
 $ cat file.m
 # Pushing element to the stack
 push 0
@@ -30,7 +30,6 @@ push 5
 stack
 push 5
 $
-```shell
 
 ## Technologies
 
