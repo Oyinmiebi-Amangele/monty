@@ -30,7 +30,7 @@ push 5
 stack
 push 5
 $
-
+```
 
 ## Technologies
 
