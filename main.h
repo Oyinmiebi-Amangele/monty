@@ -44,9 +44,11 @@ typedef struct instruction_s
  * @lifo: is stack or queue
  * @curr: current line
  * @sec: second parameter inside the current line
+ * @content: line content
  * @head: doubly linked list
  * @fdis: file descriptor
  * @buff: input text
+ * @arg: value
  *
  * Description: doubly linked list node structure for
  * stack, queues, LIFO, FIFO
@@ -56,8 +58,10 @@ typedef struct global
 	int lifo;
 	unsigned int curr;
 	char sec;
+	char *arg;
 	stack_t *head;
 	FILE *fdis;
+	char *content;
 	char *buff;
 } global;
 
@@ -69,13 +73,13 @@ void f_pall(stack_t **head, unsigned int number);
 void f_pint(stack_t **head, unsigned int counter);
 void f_pop(stack_t **head, unsigned int counter);
 void f_swap(stack_t **head, unsigned int counter);
-void f_swap(stack_t **head, unsigned int counter);
-void f_swap(stack_t **head, unsigned int counter);
+void f_add(stack_t **head, unsigned int counter);
+void f_nop(stack_t **head, unsigned int counter);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsgined int counter);
 
 /* doubly linked list functions */
-stack_t *add_node_end(stack_t **head, const int n);
+stack_t *add_queue(stack_t **head, const int n);
 stack_t *add_node(stack_t **head, const int n);
 void free_list(stack_t *head);
 
