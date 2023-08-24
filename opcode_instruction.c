@@ -43,3 +43,25 @@ void f_push(stack_t **head, unsigned int number)
 	else
 		add_queue(head, n);
 }
+
+/**
+ * f_pall - print the stack
+ * @head: stack head
+ * @number: not used
+ * Return: no return
+ */
+
+void f_pall(stack_t **head, unsigned int number))
+{
+	stack_t *h;
+	(void)number;
+
+	h = *head;
+	if (h == NULL)
+		return;
+	while (h)
+	{
+		printf("%d\n", h->n);
+		h = h->next;
+	}
+}
