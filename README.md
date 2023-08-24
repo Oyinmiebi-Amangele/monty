@@ -41,18 +41,21 @@ $
 ## Usage
 
 To compile the files:
+
 ```shell
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 $
 ```
 
 The synopsis of the interpreter is as follows:
+
 ```shell
 $ ./monty [filename]
 $
 ```
 
 To run the interpreter:
+
 ```shell
 $ ./monty file.m
 2
