@@ -30,6 +30,7 @@ push 5
 stack
 push 5
 $
+```
 
 ## Technologies
 
@@ -41,16 +42,21 @@ $
 
 To compile the files:
 
+```shell
 $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 $
+```
 
 The synopsis of the interpreter is as follows:
 
+```shell
 $ ./monty [filename]
 $
+```
 
 To run the interpreter:
 
+```shell
 $ ./monty file.m
 2
 1
@@ -60,6 +66,7 @@ $ ./monty file.m
 2
 1
 $
+```
 
 ## Features
 
