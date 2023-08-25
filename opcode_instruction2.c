@@ -1,3 +1,4 @@
+#include "monty.h"
 /**
  * f_swap - swaps the top two elements of the stack
  *
@@ -19,9 +20,9 @@ void f_swap(stack_t **head, unsigned int counter)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
-		fclose(glob.file);
+		fclose(glob.fdis);
 		free(glob.content);
-		free_stack(*head);
+		free_list(*head);
 		exit(EXIT_FAILURE);
 	}
 	h = *head;
