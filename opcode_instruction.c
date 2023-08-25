@@ -59,3 +59,45 @@ void f_pall(stack_t **head, unsigned int number)
 	}
 }
 
+/**
+ * f_pint - prints the value at the top of the stack
+ *
+ * @head: head of the linked list
+ * @counter: line number
+ * Return: no return
+ */
+void f_pint(stack_t **head, unsigned int counter)
+{
+	(void)counter;
+
+	if (*head == NULL)
+	{
+		dprintf(2, "L%u: ", counter);
+		dprintf(2, "can't pint, stack empty\n");
+		free_glob();
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*head)->n);
+}
+
+/**
+ * f_pop - removes the top element of the stack
+ *
+ * @head: head of the linked list
+ * @counter: line number
+ * Return: no return
+ */
+void f_pop(stack_t **head, unsigned int counter)
+{
+	stack_t *ax;
+
+	if (head == NULL || *head == NULL)
+	{
+		dprintf(2, "L%u: can't pop an empty stack\n", counter);
+		free_glob();
+		exit(EXIT_FAILURE);
+	}
+	ax = *head;
+	*head = (*head)->next;
+	free(ax);
+}
