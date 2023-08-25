@@ -51,9 +51,10 @@ void f_push(stack_t **head, unsigned int number)
  * Return: no return
  */
 
-void f_pall(stack_t **head, unsigned int number))
+void f_pall(stack_t **head, unsigned int number)
 {
 	stack_t *h;
+	(void)head;
 	(void)number;
 
 	h = *head;

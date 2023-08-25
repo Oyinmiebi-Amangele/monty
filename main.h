@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <ctype.h>
-
+#include <string.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -58,7 +58,7 @@ typedef struct global
 {
 	int lifo;
 	unsigned int curr;
-	char sec;
+	char *sec;
 	char *arg;
 	stack_t *head;
 	FILE *fdis;
@@ -77,7 +77,7 @@ void f_swap(stack_t **head, unsigned int counter);
 void f_add(stack_t **head, unsigned int counter);
 void f_nop(stack_t **head, unsigned int counter);
 void f_queue(stack_t **head, unsigned int counter);
-void f_stack(stack_t **head, unsgined int counter);
+void f_stack(stack_t **head, unsigned int counter);
 
 /* doubly linked list functions */
 stack_t *add_queue(stack_t **head, const int n);

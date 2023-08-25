@@ -1,7 +1,5 @@
 #include "main.h"
 
-global_t glob;
-
 /**
  * free_glob -frees the global variables
  *
@@ -53,10 +51,10 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	fdis = fopen(argv[1], "r");
-	if (!fd)
+	if (!fdis)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILUTE);
+		exit(EXIT_FAILURE);
 	}
 	start_glob(fdis);
 	nlines = getline(&glob.buff, &size, fdis);
@@ -71,7 +69,7 @@ int main(int argc, char *argv[])
 				dprintf(2, "L%u: ", glob.curr);
 				dprintf(2, "unknown instruction %s\n", lines[0]);
 				free_glob();
-				exit(EXIT_fAILURE);
+				exit(EXIT_FAILURE);
 			}
 			glob.sec = strtok(NULL, " \t\n");
 			f(&glob.head, glob.curr);
