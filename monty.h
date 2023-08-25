@@ -44,7 +44,6 @@ typedef struct instruction_s
  * struct global - global structure to use in the functions
  * @lifo: is stack or queue
  * @curr: current line
- * @sec: second parameter inside the current line
  * @content: line content
  * @head: doubly linked list
  * @fdis: file descriptor
@@ -58,7 +57,6 @@ typedef struct global
 {
 	int lifo;
 	unsigned int curr;
-	char *sec;
 	char *arg;
 	stack_t *head;
 	FILE *fdis;

@@ -1,4 +1,5 @@
 #include "monty.h"
+global glob;
 
 /**
  * free_glob -frees the global variables
@@ -23,7 +24,7 @@ void start_glob(FILE *fdis)
 {
 	glob.lifo = 1;
 	glob.curr = 1;
-	glob.sec = NULL;
+	glob.arg = NULL;
 	glob.head = NULL;
 	glob.fdis = fdis;
 	glob.buff = NULL;
@@ -71,7 +72,7 @@ int main(int argc, char *argv[])
 				free_glob();
 				exit(EXIT_FAILURE);
 			}
-			glob.sec = strtok(NULL, " \t\n");
+			glob.arg = strtok(NULL, " \t\n");
 			f(&glob.head, glob.curr);
 		}
 		nlines = getline(&glob.buff, &size, fdis);
