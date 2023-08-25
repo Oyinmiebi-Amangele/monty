@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * add_queue - Adds a new node at the end of a queue
  * @head: Pointer to a pointer to the head node of the queue
