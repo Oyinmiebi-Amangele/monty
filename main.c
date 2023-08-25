@@ -79,4 +79,6 @@ int main(int argc, char *argv[])
 	}
 	free_glob();
 	fclose(fdis);
+
+	return (0);
 }

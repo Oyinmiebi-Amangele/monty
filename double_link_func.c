@@ -10,6 +10,7 @@
 stack_t *add_queue(stack_t **head, const int n)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
+	stack_t *current;
 
 	if (!new_node)
 		return (NULL);
@@ -18,13 +19,14 @@ stack_t *add_queue(stack_t **head, const int n)
 	new_node->prev = NULL;
 	new_node->next = NULL;
 
+	current = *head;
+
 	if (*head == NULL)
 	{
 		*head = new_node;
 		return (new_node);
 	}
 
-	stack_t *current = *head;
 
 	while (current->next != NULL)
 	{
@@ -49,6 +51,7 @@ stack_t *add_node(stack_t **head, const int n)
 
 	if (!new_node)
 		return (NULL);
+
 	new_node->n = n;
 	new_node->prev = NULL;
 	new_node->next = *head;
