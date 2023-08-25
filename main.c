@@ -30,6 +30,7 @@ void start_glob(FILE *fdis)
 	glob.buff = NULL;
 }
 
+
 /**
  * main - Entry point
  *
@@ -46,17 +47,7 @@ int main(int argc, char *argv[])
 	ssize_t nlines = 0;
 	char *lines[2] = {NULL, NULL};
 
-	if (argc != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
-	fdis = fopen(argv[1], "r");
-	if (!fdis)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
+	fdis = check_input(argc, argv);
 	start_glob(fdis);
 	nlines = getline(&glob.buff, &size, fdis);
 	while (nlines != -1)

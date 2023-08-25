@@ -77,6 +77,7 @@ void f_nop(stack_t **head, unsigned int counter);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
 
+
 /* doubly linked list functions */
 stack_t *add_queue(stack_t **head, const int n);
 stack_t *add_node(stack_t **head, const int n);
