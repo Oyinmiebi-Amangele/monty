@@ -76,6 +76,7 @@ void f_add(stack_t **head, unsigned int counter);
 void f_nop(stack_t **head, unsigned int counter);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
+void f_sub(stack_t **head, unsigned int counter);
 
 
 /* doubly linked list functions */

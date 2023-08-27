@@ -75,3 +75,32 @@ void f_nop(stack_t **head, unsigned int counter)
 	(void) counter;
 	(void) head;
 }
+
+/**
+ * f_sub - subtraction
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+ */
+void f_sub(stack_t **head, unsigned int counter)
+{
+	stack_t *aux;
+	int sus, node;
+
+	aux = *head;
+	for (node = 0; aux != NULL; node++)
+		aux = aux->next;
+	if (node < 2)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
+		fclose(glob.fdis);
+		free(glob.content);
+		free_list(*head);
+		exit(EXIT_FAILURE);
+	}
+	aux = *head;
+	sus = aux->next->n - aux->n;
+	aux->next->n = sus;
+	*head = aux->next;
+	free(aux);
+}
