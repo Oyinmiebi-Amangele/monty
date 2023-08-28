@@ -86,7 +86,6 @@ void f_nop(stack_t **head, unsigned int counter)
  */
 void f_sub(stack_t **head, unsigned int counter)
 {
-
 	stack_t *h;
 	int len = 0, ax;
 

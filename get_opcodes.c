@@ -4,8 +4,6 @@
  * get_opcodes - selects the correct opcode to perform
  *
  * @opc: opcode passed
- * @stack: head linked list - stack
- * @counter: line_counter
  *
  * Return: pointer to the function that executes the opcode
  */
