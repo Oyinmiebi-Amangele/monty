@@ -1,15 +1,16 @@
 #include "monty.h"
+
 /**
  * f_mul - multiplies the top two elements of the stack
  * @head: stack head
- * counter: line_number
+ * @counter: line_number
  * Return: no return
  */
 void f_mul(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, ax;
-	
+
 	h = *head;
 	while (h)
 	{
@@ -58,7 +59,7 @@ void f_mod(stack_t **head, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 	h = *head;
-	if (h->n ==0)
+	if (h->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", counter);
 		fclose(glob.fdis);
@@ -88,17 +89,17 @@ void f_pchar(stack_t **head, unsigned int counter)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", counter);
 		fclose(glob.fdis);
-                free(glob.content);
-                free_list(*head);
-                exit(EXIT_FAILURE);
+		free(glob.content);
+		free_list(*head);
+		exit(EXIT_FAILURE);
 	}
 	if (h->n > 127 || h->n < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", counter);
 		fclose(glob.fdis);
-                free(glob.content);
-                free_list(*head);
-                exit(EXIT_FAILURE);
+		free(glob.content);
+		free_list(*head);
+		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", h->n);
 }

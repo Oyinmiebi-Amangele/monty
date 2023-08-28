@@ -25,7 +25,7 @@ void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 	(*head) = copy;
 }
 
-/*
+/**
  * f_stack - prints the top
  * @head: stack head
  * @counter: line_number

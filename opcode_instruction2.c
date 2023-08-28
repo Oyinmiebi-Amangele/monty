@@ -78,7 +78,7 @@ void f_nop(stack_t **head, unsigned int counter)
 
 /**
  * f_sub - subtract stack top elemt from second
- * @hed: stack head
+ * @head: stack head
  * f_sub - subtraction
  * @head: stack head
  * @counter: line_number
@@ -91,9 +91,9 @@ void f_sub(stack_t **head, unsigned int counter)
 
 	h = *head;
 	while (h)
-        {
-                h = h->next;
-                len++;
+	{
+		h = h->next;
+		len++;
 	}
 	if (len < 2)
 	{
@@ -131,18 +131,18 @@ void f_div(stack_t **head, unsigned int counter)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
 		fclose(glob.fdis);
-                free(glob.content);
-                free_list(*head);
-                exit(EXIT_FAILURE);
+		free(glob.content);
+		free_list(*head);
+		exit(EXIT_FAILURE);
 	}
 	h = *head;
 	if (h->n == 0)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", counter);
-                fclose(glob.fdis);
-                free(glob.content);
-                free_list(*head);
-                exit(EXIT_FAILURE);
+		fclose(glob.fdis);
+		free(glob.content);
+		free_list(*head);
+		exit(EXIT_FAILURE);
 	}
 	ax = h->next->n / h->n;
 	h->next->n = ax;
