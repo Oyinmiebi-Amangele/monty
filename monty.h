@@ -74,6 +74,14 @@ void f_pop(stack_t **head, unsigned int counter);
 void f_swap(stack_t **head, unsigned int counter);
 void f_add(stack_t **head, unsigned int counter);
 void f_nop(stack_t **head, unsigned int counter);
+void f_sub(stack_t **head, unsigned int counter);
+void f_div(stack_t **head, unsigned int counter);
+void f_mul(stack_t **head, unsigned int counter);
+void f_mod(stack_t **head, unsigned int counter);
+void f_pchar(stack_t **head, unsigned int counter);
+void f_pstr(stack_t **head, unsigned int counter);
+void f_rotl(stack_t **head, unsigned int counter);
+void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
 
@@ -84,7 +92,7 @@ stack_t *add_node(stack_t **head, const int n);
 void free_list(stack_t *head);
 
 /* get function */
-void (*get_opcodes(char *opc))(stack_t **stack, unsigned int number);
+void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
 
 /* main */
 void free_glob(void);
