@@ -84,7 +84,6 @@ void f_rotl(stack_t **head, unsigned int counter);
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
-void f_sub(stack_t **head, unsigned int counter);
 
 
 /* doubly linked list functions */
