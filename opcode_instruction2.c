@@ -77,13 +77,19 @@ void f_nop(stack_t **head, unsigned int counter)
 }
 
 /**
+<<<<<<< HEAD
  * f_sub - subtract stack top elemt from second
  * @hed: stack head
+=======
+ * f_sub - subtraction
+ * @head: stack head
+>>>>>>> d015f34804ae6f781547926643e76f2ecf29b7f5
  * @counter: line_number
  * Return: no return
  */
 void f_sub(stack_t **head, unsigned int counter)
 {
+<<<<<<< HEAD
 	stack_t *h;
 	int len = 0, ax;
 	
@@ -94,6 +100,15 @@ void f_sub(stack_t **head, unsigned int counter)
                 len++;
         }
 	if (len < 2)
+=======
+	stack_t *aux;
+	int sus, node;
+
+	aux = *head;
+	for (node = 0; aux != NULL; node++)
+		aux = aux->next;
+	if (node < 2)
+>>>>>>> d015f34804ae6f781547926643e76f2ecf29b7f5
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
 		fclose(glob.fdis);
@@ -101,6 +116,7 @@ void f_sub(stack_t **head, unsigned int counter)
 		free_list(*head);
 		exit(EXIT_FAILURE);
 	}
+<<<<<<< HEAD
 	h = *head;
 	ax = h->next->n - h->n;
 	h->next->n = ax;
@@ -149,3 +165,11 @@ void f_div(stack_t **head, unsigned int counter)
 }
 
 
+=======
+	aux = *head;
+	sus = aux->next->n - aux->n;
+	aux->next->n = sus;
+	*head = aux->next;
+	free(aux);
+}
+>>>>>>> d015f34804ae6f781547926643e76f2ecf29b7f5

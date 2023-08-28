@@ -101,3 +101,7 @@ void f_pop(stack_t **head, unsigned int counter)
 	*head = (*head)->next;
 	free(ax);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> d015f34804ae6f781547926643e76f2ecf29b7f5
